@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ record.first_name | title }} {{ record.last_name | title }}</h1>
+{{ record.email }}<br>
+{{ record.phone }}<br>
+{{ record.address }}<br>
+{{ record.city }}<br>
+{{ record.state }}<br>
+{{ record.zipcode }}<br>
+{{ record.created_at }}<br>
+
+<br>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'delete' record.id %}" class="btn btn-danger">Delete</a>
+
+<a href="{% url 'update' record.id %}" class="btn btn-secondary">Edit</a>
+{% endblock %}
